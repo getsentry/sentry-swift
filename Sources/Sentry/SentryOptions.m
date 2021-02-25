@@ -30,6 +30,9 @@
         self.attachStacktrace = YES;
         self.maxAttachmentSize = 20 * 1024 * 1024;
         self.sendDefaultPii = NO;
+#if TARGET_OS_IOS
+        self.recordSession = NO;
+#endif
         _sdkInfo = [[SentrySdkInfo alloc] initWithName:SentryMeta.sdkName
                                             andVersion:SentryMeta.versionString];
 
@@ -161,6 +164,10 @@
 
     if (nil != options[@"sendDefaultPii"]) {
         self.sendDefaultPii = [options[@"sendDefaultPii"] boolValue];
+    }
+
+    if (nil != options[@"recordSession"]) {
+        self.recordSession = [options[@"recordSession"] boolValue];
     }
 }
 
