@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- feat: Add trace header to http requests (#1213)
+
 ## 7.2.0-beta.4
 
 - fix: Compile failure with C99 (#1224)
