@@ -41,6 +41,13 @@ SENTRY_NO_INIT
     NS_SWIFT_NAME(start(configureOptions:));
 
 /**
+ * Allow to change options after start.
+ * If SentrySDK was initialized with a plist file, this method can be used to change some
+ * options that cannot be set using plist like callbacks.
+ */
++ (void)configureOptions:(void (^)(SentryOptions *options))configureOptions;
+
+/**
  * Captures a manually created event and sends it to Sentry.
  *
  * @param event The event to send to Sentry.
