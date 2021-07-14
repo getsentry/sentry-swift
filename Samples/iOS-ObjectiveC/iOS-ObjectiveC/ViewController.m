@@ -2,12 +2,21 @@
 
 @import Sentry;
 
-@interface
-ViewController ()
-
-@end
-
 @implementation ViewController
+
+-(instancetype)init {
+    self = [super init];
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
